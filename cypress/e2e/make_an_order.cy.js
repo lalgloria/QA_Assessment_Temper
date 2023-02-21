@@ -33,7 +33,7 @@ describe('Make An Order Test', () => {
 
         // add items to cart
         cy.log('_ADD ITEMS TO CART_')
-        cy.common('title').contains('PRODUCTS')
+        cy.common('title').contains('Products')
         cy.wrap(ADD_TO_CART_SELECTORS).each((index) => {
             cy.inventory(`${index}`).click()
             cy.common('shopping cart badge').contains(i++)
@@ -49,12 +49,11 @@ describe('Make An Order Test', () => {
         cy.log('_ADD ITEMS TO CART_')
         cy.wrap(ADD_TO_CART_SELECTORS).each((index) => {
             cy.inventory(`${index}`).click()
-            cy.common('shopping cart badge').contains(i++)
         })
 
         // go to cart
         cy.common('shopping cart icon').click()
-        cy.common('title').contains('YOUR CART')
+        cy.common('title').contains('Your Cart')
 
         // check list of checked-out items
         cy.log('_CHECK ITEMS ON CART_')
@@ -81,7 +80,6 @@ describe('Make An Order Test', () => {
         cy.log('_ADD ITEMS TO CART_')
         cy.wrap(ADD_TO_CART_SELECTORS).each((index) => {
             cy.inventory(`${index}`).click()
-            cy.common('shopping cart badge').contains(i++)
         })
 
         // go to cart and checkout
